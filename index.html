@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      h1 { font-size: 2.5em; }
+      h2 { font-size: 1.875em; }
+      p { font-size: 0.5em; margin: 0.3em }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  </head>
+<body>
+<noscript>Sorry, your browser does not support JavaScript!</noscript>
+
+<h1>Test Page</h1>
+<h2> Tabs </h2>
+<button class="btn" onclick=" window.open('http://google.com','_blank')">New Tab</button>
+<button class="btn" onclick=" window.open('http://google.com','_self')">Same Tab</button>
+
+<br />
+<br />
+
+<h2> Input KEYUP-event test <h2>
+<form>
+  <p> Input 1 </p>
+  <input id="input_1" type="text"/>
+  <br />
+  <p> Input 2 </p>
+  <input id="input_2" type="text"/>
+</form>
+
+</body>
+<script>
+var input_1 = document.getElementById('input_1')
+var input_2 = document.getElementById('input_2')
+
+input_1.addEventListener("keydown", event => {
+  console.log("keydown input_1: triggered with addEventListener; key: " + event.keyCode)
+  if (event.keyCode === 13) {
+    input_2.focus()
+  }
+});
+
+input_2.addEventListener("keydown", event => {
+  // console.log("keydown input_2: triggered with addEventListener; key: " + event.keyCode)
+  if (event.keyCode === 13) {
+    input_1.focus()
+  }
+});
+const _input =$( "#input_1" )
+_input.on("keydown", (e) => { console.log("keydown input_1: triggered with jquery.on(...)"); });
+</script>
+</html>
