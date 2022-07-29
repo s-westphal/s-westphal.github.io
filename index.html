@@ -13,8 +13,8 @@
 
 <h1>Test Page</h1>
 <h2> Tabs </h2>
-<button class="btn" onclick="window.open('sadchonks.com','_blank')">New Tab</button>
-<button class="btn" onclick="window.open('sadchonks.com','_self')">Same Tab</button>
+<button class="btn" onclick="window.open('https://sadchonks.com','_blank')">New Tab</button>
+<button class="btn" onclick="window.open('https://sadchonks.com','_self')">Same Tab</button>
 
 <br />
 <br />
@@ -27,6 +27,12 @@
   <p> Input 2 </p>
   <input id="input_2" type="text"/>
 </form>
+
+<br />
+
+<h2>postMessage</h2>
+
+<button class="btn" onclick="x.postMessage('from js')">Post Message</button>
 
 </body>
 <script>
@@ -48,5 +54,9 @@ input_2.addEventListener("keydown", event => {
 });
 const _input =$( "#input_1" )
 _input.on("keydown", (e) => { console.log("keydown input_1: triggered with jquery.on(...)"); });
+
+x.addEventListener("message", function(event) {
+  console.log("received web message: " + event.data);
+});
 </script>
 </html>
