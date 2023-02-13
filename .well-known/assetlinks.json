@@ -1,14 +1,26 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "org.chromium.webengine.shell",
-    "sha256_cert_fingerprints": ["32:A2:FC:74:D7:31:10:58:59:E5:A8:5D:F1:6D:95:F1:02:D8:5B:22:09:9B:80:64:C5:D8:91:5C:61:DA:D1:E0"]
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "org.chromium.webengine.shell",
+      "sha256_cert_fingerprints": ["32:A2:FC:74:D7:31:10:58:59:E5:A8:5D:F1:6D:95:F1:02:D8:5B:22:09:9B:80:64:C5:D8:91:5C:61:DA:D1:E0"]
+    }
   },
+  {
   "relation": ["delegate_permission/common.handle_all_urls"],
   "target": {
     "namespace": "android_app",
     "package_name": "org.chromium.webview_shell",
     "sha256_cert_fingerprints": ["32:A2:FC:74:D7:31:10:58:59:E5:A8:5D:F1:6D:95:F1:02:D8:5B:22:09:9B:80:64:C5:D8:91:5C:61:DA:D1:E0"]
+    }
+  },
+  {
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.example.webview_test_app",
+    "sha256_cert_fingerprints": ["98:2E:AB:06:2A:98:AB:71:CA:A5:15:B0:64:AA:25:4A:63:E3:08:5E:0F:0F:22:F6:35:F2:D1:AB:2C:F6:DE:AD"]
+    }
   }
-}]
+]
