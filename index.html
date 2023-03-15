@@ -22,8 +22,16 @@
 <h2> Contacts picker </h2>
 <input type=file accept=contacts>
 
+
+<h2> Navigation to intent </h2>
+
+<button onclick="fetch('intent://#Intent;package=org.chromium.webengine.shell;component=org.chromium.webengine.shell/org.chromium.webengine.shell.WebEngineNavigationTestActivity;action=android.intent.action.MAIN;end')"></button>
+
+<a href="intent:#Intent;action=org.chromium.webengine.shell.action.VIEW;end">To navigation activity</a>
+
 <br />
 <br />
+
 
 <h2> Input KEYUP-event test <h2>
 <form>
@@ -40,12 +48,29 @@
 
 <button class="btn" onclick="x.postMessage('from js')">Post Message</button>
 
-<h2> iFrame </h2>
+<h2>iFrame</h2>
 
 <iframe src="https://tests.peter.sh" title="IFRAME"></iframe>
 
+<h2>Portal</h2>
+
+<portal id="exampleportal" src="https://google.com/"></portal>
+
 </body>
 <script>
+
+document.cookie = "__Host-set-by-js=cookiieeeeeeeee; SameSite=None; Secure; Path=/; Partitioned;";
+
+var count = 0;
+document.body.addEventListener("click", () => {
+if (count % 2 == 0){
+document.body.style.backgroundColor = "green";
+} else {
+document.body.style.backgroundColor = "red";
+}
+count++;
+})
+
 var input_1 = document.getElementById('input_1')
 var input_2 = document.getElementById('input_2')
 
